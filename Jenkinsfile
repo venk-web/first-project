@@ -1,11 +1,6 @@
 pipeline{
     agent { label 'agent1' }
     stages{
-   	stage("Maven Build"){
-           steps{
-               sh 'mvn package'
-           } 
-        }
         stage("Maven Build"){
             steps{
                 sh "mvn clean package"
