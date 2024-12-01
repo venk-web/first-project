@@ -1,18 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
-                             http://xmlns.jcp.org/xml/ns/javaee/web-app_3_0.xsd"
-         version="3.0">
+package com.example;
 
-    <servlet>
-        <servlet-name>HelloWorldServlet</servlet-name>
-        <servlet-class>com.example.HelloWorldServlet</servlet-class>
-    </servlet>
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.io.*;
 
-    <servlet-mapping>
-        <servlet-name>HelloWorldServlet</servlet-name>
-        <url-pattern>/hello</url-pattern>
-    </servlet-mapping>
+public class HelloWorldServlet extends HttpServlet {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Set the content type for the response
+        response.setContentType("text/html");
 
-</web-app>
+        // Write the response
+        PrintWriter out = response.getWriter();
+        out.println("<html><body>");
+        out.println("<h1>Hello, world!</h1>");
+        out.println("</body></html>");
+    }
+}
